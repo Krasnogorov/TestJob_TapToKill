@@ -82,7 +82,7 @@ public class InitializeGame : MonoBehaviour
     /// <param name="retryCallback">callback for alert window</param>
     private void ShowError(string text, Action retryCallback)
     {
-        // TODO: implement alert window here
         Debug.LogError(text);
+        ErrorWindow.ShowError(text, retryCallback);
     }
 }
