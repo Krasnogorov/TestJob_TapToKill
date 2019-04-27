@@ -14,10 +14,14 @@ using UnityEngine.UI;
 /// </summary>
 public class ErrorWindow : MonoBehaviour
 {
+    // static instance of window
     private static ErrorWindow msInstance = null;
+    // callback for retry action
     private Action retryCallback;
+    // text in window
     [SerializeField]
     private Text textLabel;
+    // window object
     [SerializeField]
     private GameObject panelObject;
 
@@ -25,11 +29,20 @@ public class ErrorWindow : MonoBehaviour
     {
         msInstance = this;
     }
-
+    /// <summary>
+    /// Static method for displaying error
+    /// </summary>
+    /// <param name="errorText">Text of error</param>
+    /// <param name="retryWindowCallback">Callback for retry action</param>
     public static void ShowError(string errorText, Action retryWindowCallback)
     {
         msInstance.DisplayErrorWindow(errorText, retryWindowCallback);
     }
+    /// <summary>
+    /// Method for displaying error
+    /// </summary>
+    /// <param name="errorText">Text of error</param>
+    /// <param name="retryWindowCallback">Callback for retry action</param>
 
     public void DisplayErrorWindow(string errorText, Action retryWindowCallback)
     {
@@ -37,7 +50,9 @@ public class ErrorWindow : MonoBehaviour
         retryCallback = retryWindowCallback;
         panelObject.SetActive(true);
     }
-
+    /// <summary>
+    /// Retry button callback
+    /// </summary>
     public void OnRetryClick()
     {
         panelObject.SetActive(false);
