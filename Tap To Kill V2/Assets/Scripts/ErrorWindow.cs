@@ -11,44 +11,27 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Window controller for simple window for error
+/// Note: it was implemented as static method to simplify call of this window
 /// </summary>
-public class ErrorWindow : MonoBehaviour
+public class ErrorWindow : BaseWindow
 {
+    // static instance of window
     private static ErrorWindow msInstance = null;
-    private Action retryCallback;
-    [SerializeField]
-    private Text textLabel;
-    [SerializeField]
-    private GameObject panelObject;
-
+ 
     public void Awake()
     {
         msInstance = this;
     }
-
+    /// <summary>
+    /// Static method for displaying error
+    /// </summary>
+    /// <param name="errorText">Text of error</param>
+    /// <param name="retryWindowCallback">Callback for retry action</param>
     public static void ShowError(string errorText, Action retryWindowCallback)
     {
-        msInstance.DisplayErrorWindow(errorText, retryWindowCallback);
+        msInstance.ShowWindow(errorText, retryWindowCallback);
     }
-
-    public void DisplayErrorWindow(string errorText, Action retryWindowCallback)
-    {
-        textLabel.text = errorText;
-        retryCallback = retryWindowCallback;
-        panelObject.SetActive(true);
-    }
-
-    public void OnRetryClick()
-    {
-        panelObject.SetActive(false);
-        if (retryCallback != null)
-        {
-            retryCallback();
-            retryCallback = null;
-        }
-        
-    }
-
+    
     private void OnDisable()
     {
         msInstance = null;

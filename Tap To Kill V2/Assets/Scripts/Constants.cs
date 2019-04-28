@@ -4,9 +4,6 @@
  * Created by Sergey Krasnogorov.
  * All rights reserved.
  */
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 /// <summary>
 /// All constants in game
@@ -23,4 +20,10 @@ public class Constants
     public const string MAIN_MENU_SCENE = "MainMenu";
     // Main game scene name
     public const string MAIN_GAME_SCENE = "MainGame";
+
+    // Window messages
+    // Win game
+    public const string WIN_GAME_MESSAGE = "You win!";
+    // Lose game
+    public const string LOSE_GAME_MESSAGE = "You lose!";
 }
