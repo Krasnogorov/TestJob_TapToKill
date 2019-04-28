@@ -87,6 +87,21 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit[] hits = Physics.RaycastAll(ray);
+            foreach (RaycastHit curHit in hits)
+            {
+                if (curHit.collider != null && curHit.collider.gameObject.tag == "Enemy")
+                {
+                    DestroyImmediate(curHit.collider.gameObject);
+                }
+            }
+        }
+
         timer += Time.deltaTime;
         if (timer >= Constants.LEVEL_TIME)
         {
@@ -100,18 +115,6 @@ public class LevelManager : MonoBehaviour
                 IngameMenu.LoseGame();
             }
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
-                {
-                    Destroy(hit.collider.gameObject);
-                }
-            }
-        }
+        
     }
 }
