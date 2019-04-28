@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
 {
     // NPC object on scene
     [SerializeField]
-    private GameObject target;
+    private GameObject target = null;
 
     void LateUpdate()
     {
