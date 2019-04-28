@@ -18,7 +18,7 @@ public class TargetSetup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         AICharacterControl characterControl = other.gameObject.GetComponent<AICharacterControl>();
-        if (characterControl != null)
+        if (characterControl != null && other.tag == "Player")
         {
             characterControl.target = nextTarget;
         }
