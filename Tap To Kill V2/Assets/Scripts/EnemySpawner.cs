@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     private void SpawnEnemy()
     {
-        EnemyData data = EnemyConfiguration.Instance.GetRandomEnemyWithDifficulty(EnemyDifficulty.EnemyDifficultyMedium);
+        EnemyData data = EnemyConfiguration.Instance.GetRandomEnemyWithDifficulty(LevelManager.Instance.CurrentDificulty);
         if (data != null)
         {
             GameObject enemy = GameObject.Instantiate(data.Prefab, gameObject.transform.position, Quaternion.identity);

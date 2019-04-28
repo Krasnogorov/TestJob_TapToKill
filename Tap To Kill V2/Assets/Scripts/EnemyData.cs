@@ -1,5 +1,5 @@
 ﻿/**
- * EnemyConfiguration.cs
+ * EnemyData.cs
  * This code is part of demo project.
  * Created by Sergey Krasnogorov.
  * All rights reserved.

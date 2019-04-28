@@ -29,4 +29,6 @@ public class Constants
 
     // Time for spawn enemy
     public const float TIME_SPAWN = 1.0f;
+    // Time for level
+    public const float LEVEL_TIME = 60.0f;
 }
