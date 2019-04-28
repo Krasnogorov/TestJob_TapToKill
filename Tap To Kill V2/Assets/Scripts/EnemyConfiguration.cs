@@ -59,6 +59,7 @@ public class EnemyConfiguration : ScriptableObject
     /// <returns></returns>
     public EnemyData GetRandomEnemyWithDifficulty(EnemyDifficulty difficulty)
     {
+        Random.InitState((int)Time.timeSinceLevelLoad);
         List<EnemyData> selected = enemies.FindAll((x) => { return x.difficulty == difficulty; });
         return selected[Random.Range(0, selected.Count - 1)];
     }

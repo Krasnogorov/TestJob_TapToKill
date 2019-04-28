@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 5979019842939500362}
   m_Layer: 0
   m_Name: EnemyHard1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

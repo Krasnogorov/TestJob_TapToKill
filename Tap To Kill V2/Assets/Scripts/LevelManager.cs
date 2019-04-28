@@ -61,6 +61,7 @@ public class LevelManager : MonoBehaviour
     public void Awake()
     {
         msInstance = this;
+        Time.timeScale = 1.0f;
     }
 
     public void OnDisable()
@@ -97,6 +98,19 @@ public class LevelManager : MonoBehaviour
             else
             {
                 IngameMenu.LoseGame();
+            }
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+                {
+                    Destroy(hit.collider.gameObject);
+                }
             }
         }
     }

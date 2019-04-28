@@ -28,7 +28,7 @@ public class Constants
     public const string LOSE_GAME_MESSAGE = "You lose!";
 
     // Time for spawn enemy
-    public const float TIME_SPAWN = 1.0f;
+    public const float TIME_SPAWN = 1.5f;
     // Time for level
     public const float LEVEL_TIME = 60.0f;
 }
