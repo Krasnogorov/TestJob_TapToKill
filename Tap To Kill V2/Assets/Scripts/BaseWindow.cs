@@ -17,10 +17,10 @@ public class BaseWindow : MonoBehaviour
     private Action windowCallback;
     // text in window
     [SerializeField]
-    private Text textLabel;
+    private Text textLabel = null;
     // window object
     [SerializeField]
-    private GameObject panelObject;
+    private GameObject panelObject = null;
 
     /// <summary>
     /// Displays the window with text and callback

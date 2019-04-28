@@ -13,13 +13,13 @@ public class IngameMenu : MonoBehaviour
 {
     // Pause window
     [SerializeField]
-    private PauseWindow PauseWindow;
+    private PauseWindow PauseWindow = null;
     // Win window
     [SerializeField]
-    private BaseWindow WinWindow;
+    private BaseWindow WinWindow = null;
     // Lose window
     [SerializeField]
-    private BaseWindow LoseWindow;
+    private BaseWindow LoseWindow = null;
 
     /// <summary>
     /// Pause button callback. Show pause window

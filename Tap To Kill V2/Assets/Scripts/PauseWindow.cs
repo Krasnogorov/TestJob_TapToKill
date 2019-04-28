@@ -19,10 +19,10 @@ public class PauseWindow : MonoBehaviour
     private Action windowBreakCallback;
     // text label
     [SerializeField]
-    private Text textLabel;
+    private Text textLabel = null;
     // window object
     [SerializeField]
-    private GameObject panelObject;
+    private GameObject panelObject = null;
     /// <summary>
     /// Displays the window
     /// </summary>
