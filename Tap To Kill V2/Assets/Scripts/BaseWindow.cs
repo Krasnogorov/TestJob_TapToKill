@@ -39,10 +39,6 @@ public class BaseWindow : MonoBehaviour
     public void OnButtonClick()
     {
         panelObject.SetActive(false);
-        if (windowCallback != null)
-        {
-            windowCallback();
-            windowCallback = null;
-        }
+        windowCallback?.Invoke();
     }
 }
